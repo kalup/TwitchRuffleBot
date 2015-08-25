@@ -3,7 +3,7 @@
 // @namespace   void.com
 // @description SpamBot for twitch, it send desired message
 // @include     http://www.twitch.tv/*
-// @version     1.1.7
+// @version     1.2
 // @updateURL   https://raw.githubusercontent.com/kalup/TwitchRuffleBot/master/twitchRuffleBot.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -18,6 +18,9 @@ window.addEventListener
   "load",
   function()
   {
+    var chatList = document.querySelector('.chat-room .tse-scroll-content');
+    chatList.parentNode.removeChild(chatList);
+
     var chatContainer =  document.querySelector('.ember-chat');
     
     var wordDiv = document.createElement('div');
