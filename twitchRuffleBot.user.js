@@ -35,7 +35,7 @@ window.addEventListener
         
         GM_setValue('wordToSpam',"");
         
-      },botRefreshTime*2);
+      },botRefreshTime*1.01);
       
     },false);
     
