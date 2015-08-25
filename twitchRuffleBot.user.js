@@ -3,11 +3,13 @@
 // @namespace   void.com
 // @description SpamBot for twitch, it send desired message
 // @include     http://www.twitch.tv/*
-// @version     1.0.6
+// @version     1.0.7
 // @updateURL   https://raw.githubusercontent.com/kalup/TwitchRuffleBot/master/twitchRuffleBot.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
 // ==/UserScript==
+
+var streamerName = window.location.pathname.replace("/","");
 
 var botRefreshTime = 10000; // 10000 millisecondi == 10 secondi
 
@@ -30,10 +32,10 @@ window.addEventListener
     wordButton.innerHTML = "Spamma";
     wordButton.addEventListener('click',function() {
       
-      GM_setValue('wordToSpam',document.getElementById('KS_wordTextInput').value);
+      GM_setValue('wordToSpam_'+streamerName,document.getElementById('KS_wordTextInput').value);
       setTimeout(function() {
         
-        GM_setValue('wordToSpam',"");
+        GM_setValue('wordToSpam_'+streamerName,"");
         
       },botRefreshTime*1.01);
       
@@ -49,9 +51,9 @@ window.addEventListener
     
     setInterval(function() {
         
-        var wordToSpam = GM_getValue('wordToSpam',"");
+        var wordToSpam = GM_getValue('wordToSpam_'+streamerName,"");
         if(wordToSpam !== "")
-          console.log(wordToSpam);
+          alert(wordToSpam);
         
       },botRefreshTime);
     
