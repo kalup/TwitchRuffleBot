@@ -3,7 +3,7 @@
 // @namespace   void.com
 // @description SpamBot for twitch, it send desired message
 // @include     http://www.twitch.tv/*
-// @version     1.1.6
+// @version     1.1.7
 // @updateURL   https://raw.githubusercontent.com/kalup/TwitchRuffleBot/master/twitchRuffleBot.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -68,6 +68,7 @@ window.addEventListener
         var wordToSpam = GM_getValue('wordToSpam_'+streamerName,"");
         if(wordToSpam !== "") {
           document.getElementById('chat_text_input').value = wordToSpam;
+          document.getElementById('chat_text_input').focus();
           window.addEventListener(
               'focus',
               focusF,
