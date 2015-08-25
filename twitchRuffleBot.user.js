@@ -3,7 +3,7 @@
 // @namespace   void.com
 // @description SpamBot for twitch, it send desired message
 // @include     http://www.twitch.tv/*
-// @version     1.0.4
+// @version     1.0.5
 // @updateURL   https://raw.githubusercontent.com/kalup/TwitchRuffleBot/master/twitchRuffleBot.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -27,7 +27,7 @@ window.addEventListener
     wordTextInput.setAttribute('style','margin-right:10px; margin-left:50px');
     
     var wordButton = document.createElement('button');
-    wordButton.value = "Spamma";
+    wordButton.innerHTML = "Spamma";
     wordButton.addEventListener('click',function() {
       
       GM_setValue('wordToSpam',document.getElementById('KS_wordTextInput').value);
@@ -43,8 +43,8 @@ window.addEventListener
     
     wordDiv.appendChild(wordTextInput);
     wordDiv.appendChild(wordButton);
-    wordDiv.appendChild(hr);
     
+    chatContainer.insertBefore(hr,chatContainer.firstChild);
     chatContainer.insertBefore(wordDiv,chatContainer.firstChild);
     
   },
