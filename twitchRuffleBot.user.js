@@ -9,7 +9,7 @@
 // @grant       GM_setValue
 // ==/UserScript==
 
-var botRefreshTime = 10000;
+var botRefreshTime = 10000; // 10000 millisecondi == 10 secondi
 
 window.addEventListener
 (
@@ -46,6 +46,12 @@ window.addEventListener
     
     chatContainer.insertBefore(hr,chatContainer.firstChild);
     chatContainer.insertBefore(wordDiv,chatContainer.firstChild);
+    
+    setInterval(function() {
+        
+        console.log(GM_getValue('wordToSpam',""));
+        
+      },botRefreshTime);
     
   },
   false
