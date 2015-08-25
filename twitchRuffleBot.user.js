@@ -3,7 +3,7 @@
 // @namespace   void.com
 // @description SpamBot for twitch, it send desired message
 // @include     http://www.twitch.tv/*
-// @version     1.1.1
+// @version     1.1.2
 // @updateURL   https://raw.githubusercontent.com/kalup/TwitchRuffleBot/master/twitchRuffleBot.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -54,9 +54,10 @@ window.addEventListener
         var wordToSpam = GM_getValue('wordToSpam_'+streamerName,"");
         if(wordToSpam !== "") {
           document.getElementById('chat_text_input').value = wordToSpam;
-          setTimeout(function() {
-            document.querySelector('.send-chat-button').click();
-          },Math.random()*1000);
+          alert();
+          document.getElementById('chat_text_input').focus();
+          alert();
+          document.querySelector('.send-chat-button').click();
         }
         
       },botRefreshTime);
