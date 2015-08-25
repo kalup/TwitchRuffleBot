@@ -3,7 +3,7 @@
 // @namespace   void.com
 // @description SpamBot for twitch, it send desired message
 // @include     http://www.twitch.tv/*
-// @version     1.1.3
+// @version     1.1.4
 // @updateURL   https://raw.githubusercontent.com/kalup/TwitchRuffleBot/master/twitchRuffleBot.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
